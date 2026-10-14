@@ -1,0 +1,3 @@
+# Modules never call other modules
+
+A module never calls another module with its own `source`. It receives what it depends on (a subnet, a key, a log group, a notification topic) as input ids, and only the `free` module and the tenancy repo compose modules by wiring one module's outputs into another's inputs. Nesting modules would have hidden the wiring, but it would also have made every module pin the versions of the modules beneath it, spreading upgrades through the family, and every module test would have had to mock the modules beneath it. Keeping composition in one place keeps each module testable through its own interface and leaves version pinning only to `free` and the tenancy repo.
