@@ -21,7 +21,7 @@ _Avoid_: boilerplate, skeleton, starter
 ### What gets built
 
 **Free stack**:
-The bundle composed by the `free` module: one dedicated compartment containing a VCN, a VPS, a bucket and a MySQL HeatWave instance, all within the Always Free Tier.
+The bundle composed by the `free` module: one dedicated compartment containing exactly one each of a VCN, a VPS, a bucket, a MySQL HeatWave instance, a bastion, a vault, a log group and a free-tier budget, together using up the tenancy's Always Free allowance.
 _Avoid_: free tier environment, sandbox, landing zone
 
 **VPS**:
