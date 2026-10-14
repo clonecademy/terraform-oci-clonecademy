@@ -46,6 +46,10 @@ _Avoid_: free-tier check, limit validation
 The dedicated, non-human OCI user whose API key the tenancy repo uses for every plan and apply; it and its least-privilege policies are managed by the tenancy repo itself.
 _Avoid_: service account, CI user, bot
 
+**Plan identity**:
+A second, read-only non-human OCI user that the tenancy repo uses only to plan, never to apply; it can read everything, including state, but change nothing.
+_Avoid_: read-only user, CI reader
+
 **Operator**:
 A human whose access the tenancy repo manages, who can run and inspect a free stack but never reshape it; structural changes go through the tenancy repo.
 _Avoid_: user, developer, admin
